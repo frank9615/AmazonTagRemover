@@ -1,1 +1,2 @@
-# Amazon Tag Remover
+# ![image](images/ico32.png) Amazon Tag Remover
+

@@ -3,8 +3,27 @@
     "version": "1.0",
     "description": "Amazon Tag Remover",
     "permissions": [
-        "activeTab"
+        "tabs",
+        "activeTab",
+        "webNavigation",
+        "webRequest",
+        "webRequestBlocking",
+        "*://*.amazon.ca/*",
+        "*://*.amazon.co.jp/*",
+        "*://*.amazon.co.uk/*",
+        "*://*.amazon.com.au/*",
+        "*://*.amazon.com.br/*",
+        "*://*.amazon.com.mx/*",
+        "*://*.amazon.com/*",
+        "*://*.amazon.de/*",
+        "*://*.amazon.es/*",
+        "*://*.amazon.fr/*",
+        "*://*.amazon.in/*",
+        "*://*.amazon.it/*",
+        "*://*.amazon.nl/*",
+        "*://*.amzn.com/*"
     ],
+    "author": "Francesco Accardi",
     "browser_action": {
         "default_icon": {
             "16": "images/ico16.png",
@@ -23,28 +42,11 @@
         "128": "images/ico128.png",
         "192": "images/ico192.png"
     },
-    "content_scripts": [
-        {
-            "js": [
-                "src/antitag.js"
-            ],
-            "matches": [
-                "*://*.amazon.ca/*",
-                "*://*.amazon.co.jp/*",
-                "*://*.amazon.co.uk/*",
-                "*://*.amazon.com.au/*",
-                "*://*.amazon.com.br/*",
-                "*://*.amazon.com.mx/*",
-                "*://*.amazon.com/*",
-                "*://*.amazon.de/*",
-                "*://*.amazon.es/*",
-                "*://*.amazon.fr/*",
-                "*://*.amazon.in/*",
-                "*://*.amazon.it/*",
-                "*://*.amazon.nl/*",
-                "*://*.amzn.com/*"
-            ]
-        }
-    ],
+    "background": {
+        "scripts": [
+            "src/antitag.js"
+        ],
+        "persistent": true
+    },
     "manifest_version": 2
 }
